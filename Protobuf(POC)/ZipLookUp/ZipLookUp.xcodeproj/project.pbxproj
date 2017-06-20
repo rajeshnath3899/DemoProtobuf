@@ -11,10 +11,10 @@
 		841CBD761ED433C800908590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841CBD741ED433C800908590 /* Main.storyboard */; };
 		841CBD781ED433C800908590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841CBD771ED433C800908590 /* Assets.xcassets */; };
 		841CBD7B1ED433C800908590 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841CBD791ED433C800908590 /* LaunchScreen.storyboard */; };
-		8439F29D1EDEACDF000E14DA /* ZLUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439F29C1EDEACDF000E14DA /* ZLUtilities.swift */; };
+		8439F29D1EDEACDF000E14DA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439F29C1EDEACDF000E14DA /* Utilities.swift */; };
 		8490AAF31EDF01B8004FDD54 /* ReportInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490AAF21EDF01B8004FDD54 /* ReportInfoTableViewCell.swift */; };
 		84D09D851ED4615F008C1B51 /* ServiceRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D09D841ED4615F008C1B51 /* ServiceRequestManager.swift */; };
-		84D09D871ED46270008C1B51 /* ZLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D09D861ED46270008C1B51 /* ZLConstants.swift */; };
+		84D09D871ED46270008C1B51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D09D861ED46270008C1B51 /* Constants.swift */; };
 		84D09D891ED4649C008C1B51 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D09D881ED4649C008C1B51 /* ActivityIndicatorView.swift */; };
 		84D572121EDC4F5C00B9D2AF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D572111EDC4F5C00B9D2AF /* SettingsTableViewController.swift */; };
 		84D572141EDC58B100B9D2AF /* ReportsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D572131EDC58B100B9D2AF /* ReportsTableViewController.swift */; };
@@ -44,10 +44,10 @@
 		841CBD771ED433C800908590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841CBD7A1ED433C800908590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		841CBD7C1ED433C800908590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8439F29C1EDEACDF000E14DA /* ZLUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLUtilities.swift; sourceTree = "<group>"; };
+		8439F29C1EDEACDF000E14DA /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		8490AAF21EDF01B8004FDD54 /* ReportInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportInfoTableViewCell.swift; sourceTree = "<group>"; };
 		84D09D841ED4615F008C1B51 /* ServiceRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRequestManager.swift; path = ZipLookUp/ServiceRequestManager.swift; sourceTree = "<group>"; };
-		84D09D861ED46270008C1B51 /* ZLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLConstants.swift; sourceTree = "<group>"; };
+		84D09D861ED46270008C1B51 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84D09D881ED4649C008C1B51 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		84D572111EDC4F5C00B9D2AF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		84D572131EDC58B100B9D2AF /* ReportsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsTableViewController.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 				8434445A1EDEE82100662671 /* Network Layer */,
 				841CBD701ED433C800908590 /* AppDelegate.swift */,
 				841CBD741ED433C800908590 /* Main.storyboard */,
-				84D09D861ED46270008C1B51 /* ZLConstants.swift */,
-				8439F29C1EDEACDF000E14DA /* ZLUtilities.swift */,
+				84D09D861ED46270008C1B51 /* Constants.swift */,
+				8439F29C1EDEACDF000E14DA /* Utilities.swift */,
 				841CBD771ED433C800908590 /* Assets.xcassets */,
 				841CBD791ED433C800908590 /* LaunchScreen.storyboard */,
 				841CBD7C1ED433C800908590 /* Info.plist */,
@@ -226,7 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D09D851ED4615F008C1B51 /* ServiceRequestManager.swift in Sources */,
-				84D09D871ED46270008C1B51 /* ZLConstants.swift in Sources */,
+				84D09D871ED46270008C1B51 /* Constants.swift in Sources */,
 				84D572141EDC58B100B9D2AF /* ReportsTableViewController.swift in Sources */,
 				84D09D891ED4649C008C1B51 /* ActivityIndicatorView.swift in Sources */,
 				84D786C11ED447C800EECBD5 /* CityListTableViewController.swift in Sources */,
@@ -234,7 +234,7 @@
 				841CBD711ED433C800908590 /* AppDelegate.swift in Sources */,
 				84D786C31ED44AB800EECBD5 /* Service.swift in Sources */,
 				84D7E8C31ED810ED005FC371 /* ZipInfoTableViewCell.swift in Sources */,
-				8439F29D1EDEACDF000E14DA /* ZLUtilities.swift in Sources */,
+				8439F29D1EDEACDF000E14DA /* Utilities.swift in Sources */,
 				84D572121EDC4F5C00B9D2AF /* SettingsTableViewController.swift in Sources */,
 				8490AAF31EDF01B8004FDD54 /* ReportInfoTableViewCell.swift in Sources */,
 			);
