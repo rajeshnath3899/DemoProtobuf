@@ -13,7 +13,7 @@ struct Service {
     
     static func getAllZipCodeInfo(onCompletion: @escaping(Result<Places>)-> Void) {
         
-        ServiceRequestManager.shared.processAPIRequest(forRouter: ZipRouter.getAllZipInfo) { (response) in
+        ServiceRequestManager.shared.processNetwork(request: Request.getAllZipInfo) { (response) in
             
             switch(response) {
                 
@@ -52,7 +52,7 @@ struct Service {
 }
 
 
-enum ZipRouter {
+enum Request {
     
     case getAllZipInfo
     

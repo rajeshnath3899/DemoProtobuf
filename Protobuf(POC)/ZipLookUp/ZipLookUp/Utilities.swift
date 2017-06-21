@@ -66,7 +66,7 @@ struct CapturedTime {
 
 struct CapturedData {
     
-    let dataType: ZipRouter.Dataformat
+    let dataType: Request.Dataformat
     let data: Data
     var dataSize: String {
         
@@ -92,8 +92,8 @@ struct CapturedData {
         }
     }
 }
-/* if we need it in seconds */
-extension TimeInterval {
+/* if we need interval in seconds */
+/*extension TimeInterval {
     
     func format() -> String? {
         let formatter = DateComponentsFormatter()
@@ -103,6 +103,6 @@ extension TimeInterval {
         return formatter.string(from: self)
     }
 }
-
+*/
 
 

@@ -20,7 +20,7 @@ class ServiceRequestManager {
         session = URLSession.shared
     }
     
-    static func selectedFormat() -> ZipRouter.Dataformat {
+    static func selectedFormat() -> Request.Dataformat {
         
         let state: Bool = SwitchSetting.fetchSetting()
         
@@ -36,10 +36,11 @@ class ServiceRequestManager {
     }
     
     
-    func processAPIRequest(forRouter zipRouter: ZipRouter,completionHandler: @escaping (Result<Data>) -> Void) {
+    func processNetwork(request: Request,completionHandler: @escaping (Result<Data>) -> Void) {
         
         do {
-            let urlRequest: URLRequest = try HeaderConfig.constructHeadersFor(router: zipRouter, withSelectedFormat: ServiceRequestManager.selectedFormat())
+            
+            let urlRequest: URLRequest = try HeaderConfig.constructHeadersFor(request, withSelectedFormat: ServiceRequestManager.selectedFormat())
             
             let startTime = Date()
             
@@ -75,13 +76,14 @@ class ServiceRequestManager {
         
     }
     
-    func recordObservations(startTime: Date, endTime: Date , dataFormat: ZipRouter.Dataformat, receivedData: Data) {
+    func recordObservations(startTime: Date, endTime: Date , dataFormat: Request.Dataformat, receivedData: Data) {
         
         let capturedTime = CapturedTime(start: startTime, end: endTime)
         let capturedData = CapturedData(dataType: dataFormat, data: receivedData)
         
         CaptureObservations.shared.capturedTime = capturedTime
         CaptureObservations.shared.capturedData = capturedData
+        
     }
     
     
@@ -91,10 +93,10 @@ class ServiceRequestManager {
 
 struct HeaderConfig {
     
-    static func constructHeadersFor(router: ZipRouter, withSelectedFormat format: ZipRouter.Dataformat) throws -> URLRequest {
+    static func constructHeadersFor(_ request: Request, withSelectedFormat format: Request.Dataformat) throws -> URLRequest {
         
-        var urlRequest = URLRequest(url: URL(string: router.path)!)
-        urlRequest.httpMethod = router.method
+        var urlRequest = URLRequest(url: URL(string: request.path)!)
+        urlRequest.httpMethod = request.method
         
         switch format {
             
@@ -111,7 +113,7 @@ struct HeaderConfig {
         
         do {
             
-            let jsonData = try JSONSerialization.data(withJSONObject: router.postbody, options: [])
+            let jsonData = try JSONSerialization.data(withJSONObject: request.postbody, options: [])
             urlRequest.httpBody = jsonData
             
             
