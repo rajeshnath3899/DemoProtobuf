@@ -67,6 +67,13 @@ struct ContentTypeValues {
     
 }
 
+struct CellIdentifiers {
+    static let ZipInfo = "ZipInfoCellIdentifier"
+    static let Reports = "ReportsCellIdentifier"
+}
+
+
+
 
 
 

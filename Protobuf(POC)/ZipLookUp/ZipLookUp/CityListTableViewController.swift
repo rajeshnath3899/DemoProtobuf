@@ -73,7 +73,7 @@ class CityListTableViewController: UITableViewController {
         
         // Configure the cell...
         
-        guard let cell: ZipInfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as? ZipInfoTableViewCell else {
+        guard let cell: ZipInfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.ZipInfo, for: indexPath) as? ZipInfoTableViewCell else {
             
             fatalError("ZipInfoTableViewCell not in tableview")
             

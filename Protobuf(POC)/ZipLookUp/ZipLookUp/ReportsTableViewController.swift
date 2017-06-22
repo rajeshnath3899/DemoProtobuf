@@ -44,7 +44,7 @@ class ReportsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell: ReportInfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reportsCellreuseIdentifier", for: indexPath) as? ReportInfoTableViewCell else {
+        guard let cell: ReportInfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.Reports, for: indexPath) as? ReportInfoTableViewCell else {
             
             fatalError("ReportInfoTableViewCell not in tableview")
         }
