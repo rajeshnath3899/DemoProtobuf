@@ -30,7 +30,6 @@ class ServiceRequestManager {
             
         case false:
             return .json
-            
         }
         
     }
