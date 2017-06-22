@@ -41,7 +41,6 @@ class ReportsTableViewController: UITableViewController {
         return 1
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell: ReportInfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.Reports, for: indexPath) as? ReportInfoTableViewCell else {

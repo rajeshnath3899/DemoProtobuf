@@ -15,7 +15,6 @@ class ZipInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var zipCodeTextLabel: UILabel!
     @IBOutlet weak var populationTextLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
