@@ -35,13 +35,11 @@ class ServiceRequestManager {
         
     }
     
-    
-    func processNetwork(request: Request,completionHandler: @escaping (Result<Data>) -> Void) {
+    /* making the network service call */
+    func execute(request: Request,completionHandler: @escaping (Result<Data>) -> Void) {
         
         do {
-            
-            let urlRequest: URLRequest = try HeaderConfig.constructHeadersFor(request, withSelectedFormat: ServiceRequestManager.selectedFormat())
-            
+            let urlRequest: URLRequest =  try self.constructHeadersFor(request, withSelectedFormat: ServiceRequestManager.selectedFormat())
             let startTime = Date()
             
             session.dataTask(with: urlRequest) {
@@ -76,6 +74,8 @@ class ServiceRequestManager {
         
     }
     
+    /* record the time and format */
+    
     func recordObservations(startTime: Date, endTime: Date , dataFormat: Request.Dataformat, receivedData: Data) {
         
         let capturedTime = CapturedTime(start: startTime, end: endTime)
@@ -86,14 +86,9 @@ class ServiceRequestManager {
         
     }
     
+    /* construct the http header fields */
     
-}
-
-
-
-struct HeaderConfig {
-    
-    static func constructHeadersFor(_ request: Request, withSelectedFormat format: Request.Dataformat) throws -> URLRequest {
+    func constructHeadersFor(_ request: Request, withSelectedFormat format: Request.Dataformat) throws -> URLRequest {
         
         var urlRequest = URLRequest(url: URL(string: request.path)!)
         urlRequest.httpMethod = request.method
@@ -112,23 +107,16 @@ struct HeaderConfig {
         }
         
         do {
-            
             let jsonData = try JSONSerialization.data(withJSONObject: request.postbody, options: [])
             urlRequest.httpBody = jsonData
             
-            
         } catch {
-            
             throw error
-            
         }
         
         return urlRequest
         
     }
-    
-    
-    
 }
 
 

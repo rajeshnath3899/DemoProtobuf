@@ -13,7 +13,7 @@ struct Service {
     
     static func getAllZipCodeInfo(onCompletion: @escaping(Result<Places>)-> Void) {
         
-        ServiceRequestManager.shared.processNetwork(request: Request.getAllZipInfo) { (response) in
+        ServiceRequestManager.shared.execute(request: Request.getAllZipInfo) { (response) in
             
             switch(response) {
                 
@@ -43,7 +43,6 @@ struct Service {
             case .error(let errorString):
                 
                 print(errorString)
-                
                 onCompletion(.error(errorString))
                 
             }
@@ -55,8 +54,6 @@ struct Service {
 enum Request {
     
     case getAllZipInfo
-    
-    
     
     
     var postbody : [String: Any] {
@@ -114,7 +111,7 @@ enum Request {
     enum Dataformat {
         case json
         case binary
-    }    
+    }
     
 }
 
